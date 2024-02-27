@@ -26,14 +26,14 @@ Next, you'll have to install the MotorGo board definition, which is available in
 
 **Arduino IDE 2.X**
 * Go to `File > Preferences`
-* Add `https://raw.githubusercontent.com/Every-Flavor-Robotics/motorgo-arduino/main/board_definitions/package_motorgo_index.json` to `Additional Boards Manager URLs`
+* Add `https://raw.githubusercontent.com/Every-Flavor-Robotics/motorgo-board-definitions/initial-release-definition/package_motorgo_index.json` to `Additional Boards Manager URLs`
 * Go to `Tools > Board > Boards Manager...`
 * Search for `MotorGo`
 * Click `Install`
 
 **Arduino IDE 1.X**
 * Go to `File > Preferences`
-* Add `https://raw.githubusercontent.com/Every-Flavor-Robotics/motorgo-arduino/main/board_definitions/package_motorgo_index.json` to `Additional Boards Manager URLs`
+* Add `https://raw.githubusercontent.com/Every-Flavor-Robotics/motorgo-board-definitions/initial-release-definition/package_motorgo_index.json` to `Additional Boards Manager URLs`
 * Go to `Tools > Board > Boards Manager...`
 * Search for `MotorGo`
 * Click `Install`
