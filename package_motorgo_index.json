@@ -11,7 +11,7 @@
                     "architecture": "esp32",
                     "version": "1.0",
                     "category": "Contributed",
-                    "url": "https://github.com/Every-Flavor-Robotics/motorgo-board-definitions/raw/engineering-builds/motorgo_1.0.zip",
+                    "url": "https://github.com/Every-Flavor-Robotics/motorgo-board-definitions/raw/initial-release-definition/motorgo_1.0.zip",
                     "archiveFileName": "motorgo_1.0.zip",
                     "checksum": "SHA-256:d095aaf7f969d3eaeb9998de9cd53fc51057c654948ebc723f1db05e8e2ba3ed",
                     "size": "79730683",
