@@ -22,7 +22,7 @@
             ]
         ],
         "mcu": "esp32s3",
-        "variant": "motorgomini_v2_r1"
+        "variant": "motorgo_mini_1"
     },
     "connectivity": [
         "wifi"
