@@ -1,0 +1,35 @@
+{
+    "packages": [
+        {
+            "name": "motorgo_v1.0",
+            "maintainer": "MotorGo LLC",
+            "websiteURL": "https://motorgo.com",
+            "email": "support@motorgo.com",
+            "platforms": [
+                {
+                    "name": "MotorGo",
+                    "architecture": "esp32",
+                    "version": "1.0",
+                    "category": "Contributed",
+                    "url": "https://github.com/Every-Flavor-Robotics/motorgo-board-definitions/raw/initial-release-definition/motorgo_1.0.zip",
+                    "archiveFileName": "motorgo_1.0.zip",
+                    "checksum": "SHA-256:d095aaf7f969d3eaeb9998de9cd53fc51057c654948ebc723f1db05e8e2ba3ed",
+                    "size": "79730683",
+                    "boards": [
+                        {
+                            "name": "MotorGo Mini V1 Rev1"
+                        },
+                        {
+                            "name": "MotorGo Mini V1 Rev2"
+                        },
+                        {
+                            "name": "MotorGo Mini V2 Rev1"
+                        }
+                    ],
+                    "toolsDependencies": []
+                }
+            ],
+            "tools": []
+        }
+    ]
+}
