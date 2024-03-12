@@ -16,8 +16,8 @@
 #define digitalPinToInterrupt(p) (((p) < 48) ? (p) : -1)
 #define digitalPinHasPWM(p) (p < 46)
 
-#define DRIVER_VOLTAGE_LIMIT 11.0
-#define DRIVER_CURRENT_LIMIT 1.8
+#define DRIVER_VOLTAGE_LIMIT 11.0f
+#define DRIVER_CURRENT_LIMIT 1.8f
 
 // A flag to indicate a GPIO pin is not set
 #define MOTORGO_GPIO_NOT_SET 0xFF
