@@ -13,8 +13,8 @@
                     "category": "Contributed",
                     "url": "https://github.com/Every-Flavor-Robotics/motorgo-board-definitions/raw/engineering-builds/motorgo_1.0.zip",
                     "archiveFileName": "motorgo_1.0.zip",
-                    "checksum": "SHA-256:1d3f1e143bc87b14af2e2cd139abb30fca8f949080de5f2ae6fba3c22cf9d1ac",
-                    "size": "79737082",
+                    "checksum": "SHA-256:a844149f37258f87febb8f8229d6ef48fbe47547c6fd7cf7166f3f9ed2a6c2dc",
+                    "size": "79737202",
                     "boards": [
                         {
                             "name": "MotorGo Mini V1 Rev1"

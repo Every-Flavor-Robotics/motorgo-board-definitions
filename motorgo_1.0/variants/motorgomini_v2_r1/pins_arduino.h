@@ -17,6 +17,9 @@
 #define digitalPinToInterrupt(p) (((p) < 48) ? (p) : -1)
 #define digitalPinHasPWM(p) (p < 46)
 
+#define DRIVER_VOLTAGE_LIMIT 17.0
+#define DRIVER_CURRENT_LIMIT 20.0
+
 // Green built-in LED
 static const uint8_t LED_BUILTIN = 38;
 // Blue LED used to indicate network activity
