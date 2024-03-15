@@ -17,14 +17,8 @@
                     "size": "79730683",
                     "boards": [
                         {
-                            "name": "MotorGo Mini V1 Rev1"
-                        },
-                        {
-                            "name": "MotorGo Mini V1 Rev2"
-                        },
-                        {
-                            "name": "MotorGo Mini V2 Rev1"
-                        }
+                            "name": "MotorGo Mini 1"
+                        }                
                     ],
                     "toolsDependencies": []
                 }
