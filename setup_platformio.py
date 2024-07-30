@@ -8,52 +8,53 @@ import glob
 # Global variables
 # Path to PIO files
 PIO_PATH = "~/.platformio"
-RELATIVE_PLATFORM_PATH = "platforms/espressif32/"
-RELATIVE_PACKAGES_PATH = "packages/framework-arduinoespressif32"
+RELATIVE_PLATFORM_PATH = "platforms"
+RELATIVE_PACKAGES_PATH = "packages"
 
 BOARDS_TXT_PATH = "./platformio_board_defs/boards.txt"
 BOARD_JSON_PATH = "./platformio_board_defs/board_json/*"
 VARIANTS_PATH = "./motorgo_1.0/variants/*"
 
+def copy_package_files(package_versioned_path):
+    # Path for package variants
+    variants_path = os.path.join(package_versioned_path, "variants")
 
-def main():
-    # Get OS
-    os_name = sys.platform
+    # Copy boards.txt with backup
+    shutil.copy(os.path.join(package_versioned_path, "boards.txt"), os.path.join(package_versioned_path, "boards.txt.bak"))
+    shutil.copy(BOARDS_TXT_PATH, os.path.join(package_versioned_path, "boards.txt"))
 
-    pio_path = os.path.expanduser(PIO_PATH)
-    print("PlatformIO path: " + pio_path)
-
-    print("Copying...")
-
-    packages_path = os.path.join(pio_path, RELATIVE_PACKAGES_PATH)
-    platform_path = os.path.join(pio_path, RELATIVE_PLATFORM_PATH)
-    variants_path = os.path.join(pio_path, RELATIVE_PACKAGES_PATH, "variants")
-    boards_path = os.path.join(pio_path, RELATIVE_PLATFORM_PATH, "boards")
-
-
-    # First, copy the boards.txt file to the platformio folder
-    # boards.txt goes in the packges/framework-arduinoespressif32 folder
-    # Write original boards.txt file to a backup file
-    shutil.copy(os.path.join(packages_path, "boards.txt"), os.path.join(packages_path, "boards.txt.bak"))
-    shutil.copy(BOARDS_TXT_PATH, os.path.join(packages_path, "boards.txt"))
-
-    # Next copy the variants over, need to copy all the folders in the variants folder
-    # The variants go in the packages/framework-arduinoespressif32/variants
-    # Overwrite any matching existing variants
+    # Copy variants
     for variant in glob.glob(VARIANTS_PATH):
         shutil.copytree(variant, os.path.join(variants_path, os.path.basename(variant)), dirs_exist_ok=True)
 
+def copy_platform_files(platform_versioned_path):
+    # Path for platform boards
+    boards_path = os.path.join(platform_versioned_path, "boards")
 
-    # Last, copy the board json files to the platformio folder
-    # The json files go in the platforms/espressif32/boards folder
-    # Overwrite any matching existing json files
+    # Copy board json files
     for json_file in glob.glob(BOARD_JSON_PATH):
         shutil.copy(json_file, os.path.join(boards_path, os.path.basename(json_file)))
 
+def main():
+    pio_path = os.path.expanduser(PIO_PATH)
+    print("PlatformIO path: " + pio_path)
+    print("Copying...")
+
+    # Find all platform versions
+    platform_versions = glob.glob(os.path.join(pio_path, RELATIVE_PLATFORM_PATH, "espressif32*"))
+    package_versions = glob.glob(os.path.join(pio_path, RELATIVE_PACKAGES_PATH, "framework-arduinoespressif32*"))
+
+    # Run the setup for all package versions
+    for package_version in package_versions:
+        print(f"Running installer for Package: {os.path.basename(package_version)}")
+        copy_package_files(package_version)
+
+    # Run the setup for all platform versions
+    for platform_version in platform_versions:
+        print(f"Running installer for Platform: {os.path.basename(platform_version)}")
+        copy_platform_files(platform_version)
 
     print("Done!")
-
-
 
 if __name__ == "__main__":
     main()
